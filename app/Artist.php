@@ -14,6 +14,6 @@ class Artist extends Model
 
     public function title()
     {
-        return $this->hasOne(ArtistTitle::class);
+        return $this->belongsTo(ArtistTitle::class, 'artist_title_id');
     }
 }

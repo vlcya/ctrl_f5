@@ -26,8 +26,14 @@ class Movie extends Model
         return $query->where('status', $status);
     }
 
-    public function scopeDirector($query, $title)
+    public function scopeArtist($query, $artist)
     {
-        return $query->with('artists')->where('artists.artist_title_id', $title);
+        return $query->with('artists')->whereHas('artists', function ($q) use ($artist)
+        {
+            $q->whereHas('title', function($q) use ($artist)
+            {
+                $q->where('title', '=', $artist);
+            });
+        });
     }
 }

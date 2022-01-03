@@ -28,6 +28,7 @@ Route::get('status_scope', function () {
     return Movie::status(0)->get();
 });
 
-Route::get('director_scope', function () {
-    return Movie::scopeDirector(3)->get();
+Route::get('artist_scope', function () {
+    return Movie::artist('Director')->get();
 });
+
