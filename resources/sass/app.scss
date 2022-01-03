@@ -1,0 +1,99 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+//fa
+@import url('https://use.fontawesome.com/releases/v5.7.2/css/all.css');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+$top_bar_height: 50px;
+$main_color: rgb(245 197 24);
+$top_bar_icon_size: 30px;
+$top_bar_icon_color: #fff;
+
+.top-bar {
+    background: $main_color;
+    height: $top_bar_height;
+
+    i {
+        color: $top_bar_icon_color;
+        font-size: $top_bar_icon_size;
+    }
+
+    a {
+        height: auto;
+    }
+}
+
+$movie_card_title: 14px;
+$movie_card_description: 12px;
+
+.movie-card {
+    .title {
+        font-size: $movie_card_title;
+    }
+
+    .description {
+        font-size: $movie_card_description;
+    }
+
+    .movie-card-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    #rating {
+        font-size: $movie_card_description;
+
+        i {
+            color: $main_color;
+        }
+    }
+
+    .btn-secondary {
+        background: $main_color;
+        border: 0px;
+        color: #000000;
+        font-size: $movie_card_title;
+    }
+}
+
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: $main_color;
+    overflow-x: hidden;
+    transition: 0.5s;
+
+    .overlay-content {
+        position: relative;
+        top: 25%;
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    a {
+        padding: 8px;
+        text-decoration: none;
+        color: #000;
+        display: block;
+        transition: 0.3s;
+    }
+
+    p {
+        font-size: 25px;
+    }
+
+}
+
+
