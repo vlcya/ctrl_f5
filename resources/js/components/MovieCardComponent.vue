@@ -3,7 +3,7 @@
         <div class="card mb-3 p-1 movie-card" v-for="movie in movies.data">
             <div class="d-flex flex-row">
                 <div class="movie-card-img col-sm-6 col-md-2 pl-sm-0 pr-sm-0">
-                    <img :src="movie.image" class="img-fluid">
+                    <img v-lazy="movie.image" class="img-fluid">
                 </div>
                 <div class="movie-card-details col-sm-6 col-md-10 pl-sm-0 pr-sm-0">
                     <div>

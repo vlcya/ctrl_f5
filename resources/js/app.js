@@ -7,6 +7,7 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+import VueLazyload from 'vue-lazyload';
 
 /**
  * The following block of code may be used to automatically register your
@@ -20,7 +21,6 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('movie-card-component', require('./components/MovieCardComponent.vue').default);
-Vue.component('menu-component', require('./components/MenuComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -31,3 +31,11 @@ Vue.component('menu-component', require('./components/MenuComponent.vue').defaul
 const app = new Vue({
     el: '#app',
 });
+
+Vue.use(VueLazyload, {
+    preLoad: 1.3,
+    error: 'dist/error.png',
+    loading: 'img/loading-buffering.gif',
+    attempt: 1,
+    throttleWait: 99999999,
+})
