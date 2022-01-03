@@ -20,15 +20,15 @@ Route::redirect('/', '/movies');
 
 Route::resource('movies', 'MovieController');
 
-Route::get('rating_scope', function () {
-    return Movie::rating(6)->get();
+Route::get('rating_scope/{rating}', function ($rating) {
+    return Movie::rating($rating)->get();
 });
 
-Route::get('status_scope', function () {
-    return Movie::status(0)->get();
+Route::get('status_scope/{status}', function ($status) {
+    return Movie::status($status)->get();
 });
 
-Route::get('artist_scope', function () {
-    return Movie::artist('Director')->get();
+Route::get('artist_scope/{artist}', function ($artist) {
+    return Movie::artist($artist)->get();
 });
 

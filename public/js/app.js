@@ -52171,7 +52171,7 @@ Vue.use(vue_lazyload__WEBPACK_IMPORTED_MODULE_0__["default"], {
   error: 'dist/error.png',
   loading: 'img/loading-buffering.gif',
   attempt: 1,
-  throttleWait: 99999999
+  throttleWait: 5
 });
 
 /***/ }),

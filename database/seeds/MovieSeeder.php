@@ -12,7 +12,7 @@ class MovieSeeder extends Seeder
      */
     public function run()
     {
-        factory(Movie::class, 100)->create();
+        factory(Movie::class, 20)->create();
 
         foreach (Movie::all() as $movie) {
             $stars = \App\Artist::inRandomOrder()->take(rand(1, 5))->pluck('id');

@@ -37,5 +37,5 @@ Vue.use(VueLazyload, {
     error: 'dist/error.png',
     loading: 'img/loading-buffering.gif',
     attempt: 1,
-    throttleWait: 99999999,
+    throttleWait: 5,
 })
